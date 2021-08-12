@@ -6,10 +6,10 @@ __all__ = ['description', 'bot', 'guilds', 'get_all_channel_content', 'get_all_g
 # Cell
 from pprint import pprint
 import json
-import discord
 import logging
 import datetime
 
+import discord
 from discord.ext import tasks, commands
 
 import sewing
@@ -51,15 +51,13 @@ async def get_all_guild_content(all_guilds):
         guild_content[guild] = channels_content
     return guild_content
 
-@tasks.loop(minutes=1, count=5)
+@tasks.loop(hours=1)
 async def sew_threads():
     print(sew_threads.current_loop)
     all_guilds = await guilds()
     guild_content = await get_all_guild_content(all_guilds)
-    print(guild_content)
-
-    for guild, content in guild_content.items():
-        send_content(content, guild)
+    resps = send_content(guild_content)
+    print([resp.status_code for resp in resps])
 
 @bot.event
 async def on_ready():
@@ -69,7 +67,7 @@ async def on_ready():
     for guild in bot.guilds:
         db.ensure_guild(guild)
     await sew_threads()
-    sew_threads.start()
+    #sew_threads.start()
 
 # Cell
 
