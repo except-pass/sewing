@@ -8,6 +8,18 @@ volumes:
     neo4j_data: {}
 
 services:
+    sewing:
+        image: crisis/sewing
+        restart: unless-stopped
+        networks:
+            - network
+        environment:
+            - "NEO4J_AUTH=${NEO4J_AUTH:-neo4j/neo4jadmin}"
+        command:
+            - "python"
+            - "-m"
+            - "sewing/sewingbot.py"
+
     neo4j:
         image: neo4j:4.3.2
         restart: unless-stopped
