@@ -11,8 +11,11 @@ entries:
       url: /
     - output: web,pdf
       title: Title
-      url: boilerplate.html
+      url: sewingbot.html
+    - output: web,pdf
+      title: Notify
+      url: notify.html
     output: web
-    title: repo_template
+    title: sewing
   output: web
   title: Sidebar

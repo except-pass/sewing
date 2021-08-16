@@ -1,13 +1,13 @@
 ---
 
-title: Talos Repo Template
+title: Sewing Discord
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Starting a new python project?  Start with this template."
-description: "Starting a new python project?  Start with this template."
+summary: "Gathers discord threads and makes them available as a digest"
+description: "Gathers discord threads and makes them available as a digest"
 nb_path: "nbs/index.ipynb"
 ---
 <!--
@@ -31,12 +31,33 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2><div class="highlight"><pre><span></span>git clone https://github.com/talosiot-will/repo_template.git
-mv repo_template <span class="nv">$new_repo_name</span>
-<span class="nb">cd</span> <span class="nv">$new_repo_name</span>
-rm -rf .git
-</pre></div>
-<p>Then edit the <code>settings.ini</code></p>
+<h2 id="Quick-Start">Quick Start<a class="anchor-link" href="#Quick-Start"> </a></h2><p>Go to a discord channel that is running this bot and type <code>!how</code> for instructions</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Add-this-bot-to-your-server">Add this bot to your server<a class="anchor-link" href="#Add-this-bot-to-your-server"> </a></h2><p>Use this link:
+<a href="https://discord.com/api/oauth2/authorize?client_id=873958608956710912&amp;permissions=67584&amp;scope=bot">https://discord.com/api/oauth2/authorize?client_id=873958608956710912&amp;permissions=67584&amp;scope=bot</a></p>
+<p>The bot needs <code>Send Messages</code> and <code>Read Message History</code> permissions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Still-to-do">Still to do<a class="anchor-link" href="#Still-to-do"> </a></h2><p>A ton of stuff!</p>
+<ul>
+<li><p>First, we probably want nicer design than just plaintext.  Also there is no indication of messages that are replying to other messages.  If I could just lift the default discord design wholesale I would.</p>
+</li>
+<li><p>Cosmetic stuff like an image for the bot.</p>
+</li>
+<li><p>Next I will look for hosting and a domain for the emails to come from.</p>
+</li>
+<li><p>After that, some backend improvements.  I hacked together the data model before I really understood what I wanted so I'd like to revisit that.</p>
+</li>
+</ul>
 
 </div>
 </div>

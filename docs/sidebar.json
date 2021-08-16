@@ -1,6 +1,7 @@
 {
-  "repo_template": {
+  "sewing": {
     "Overview": "/",
-    "Title": "boilerplate.html"
+    "Title": "sewingbot.html",
+    "Notify": "notify.html"
   }
 }
