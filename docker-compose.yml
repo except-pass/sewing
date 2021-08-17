@@ -9,7 +9,7 @@ volumes:
 
 services:
     sewing:
-        image: crisis/sewing
+        image: crisis/sewing:latest
         restart: unless-stopped
         networks:
             - network
