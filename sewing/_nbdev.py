@@ -2,14 +2,14 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"logger": "db.ipynb",
+index = {"logger": "sewingbot.ipynb",
          "config_file": "config.ipynb",
          "ensure_unique_nodes": "db.ipynb",
          "guild_node": "db.ipynb",
          "user_node": "db.ipynb",
          "channel_node": "db.ipynb",
          "ensure_guild": "db.ipynb",
-         "guilds": "db.ipynb",
+         "guilds": "sewingbot.ipynb",
          "register_user": "db.ipynb",
          "unregister_user": "db.ipynb",
          "set_email": "db.ipynb",
