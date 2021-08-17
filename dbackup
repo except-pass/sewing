@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+#usage
+#dbackup cmd service_name
+#cmd is create or restore
+#e.g. dbackup create grafana
+set -e
+
+help() {
+    echo "Manage backups of data in docker container.  Available commands: "
+    echo "create, restore, upload, download"
+    echo "Available services: grafana, neo4j, prometheus"
+    echo "Arguments"
+    echo "-d The date of the backup to download.  e.g. dbackup download grafana 2021-06-02"
+    exit 1
+}
+
+cmd=$1
+service=$2
+date=$3
+
+dc_namespace="sewing"
+
+target_container=$dc_namespace"_"$service"_1"
+backup_name=$service-backup.tar
+
+case $service in
+
+    grafana)
+        target_path="/var/lib/grafana"
+        ;;
+
+    neo4j)
+        target_path="/data"
+        ;;
+    prometheus)
+        target_path="/prometheus"
+        ;;
+    *)
+        help
+        ;;
+esac
+
+case $cmd in
+    create)
+        #mount the volumes from a given container.  tar up all the data from $target_path (on the container) into backup.tar
+        docker run --rm --volumes-from $target_container -v $(pwd):/backup busybox tar cvf /backup/$backup_name $target_path || \
+        exit 1
+        ;;
+
+    restore)
+        data_container=$dc_namespace"_"$service"_data"
+
+        docker stop $target_container
+        docker rm $target_container
+        docker volume rm $data_container && \
+        docker create -v $data_container:$target_path --name VOLUME_RESTORE busybox true && \
+        docker run --rm --volumes-from VOLUME_RESTORE -v $(pwd):/backup busybox tar xvf /backup/$backup_name && \
+        docker rm VOLUME_RESTORE && \
+        echo "SUCCESS" || \
+        exit 1
+        ;;
+
+    upload)
+        #newfname=$service.$(date +%F).tar && \
+        #mv $backup_name $newfname && \
+        #aws s3 cp $newfname s3://talosiot.backups/$newfname && \
+        echo No S3 bucket configured || \
+        exit 0
+        ;;
+
+    download)
+        #remote_name=$service.$date.tar
+        #aws s3 cp s3://talosiot.backups/$remote_name $backup_name
+        echo No S3 bucket configured
+        ;;
+
+    *)
+        help ;; 
+esac

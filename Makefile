@@ -29,3 +29,7 @@ endif
 server:
 	. .venv/bin/activate && jupyter lab --ip 0.0.0.0
 
+
+docker: 
+	docker build -t crisis/sewing .
+

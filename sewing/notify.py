@@ -33,6 +33,9 @@ class Retriever:
         That were sent since `after`
         '''
         messages = {}
+        if chan is None:
+            return {}
+
         all_threads = [] if chan.threads is None else chan.threads
         for thread in all_threads:
             logger.info("THREAD {}".format(thread))
@@ -62,14 +65,26 @@ class FakeResp:
     status_code="didnt send"
 
 def send_content(content:dict):
+    logger.info("Sending content: {}".format(content))
     resps = []
     for guild, guild_content in content.items():
+        if not guild_content:
+            logger.info("{} has no content".format(guild))
+            continue
+        else:
+            logger.info("the content is {}".format(guild_content))
+
         to_emails = get_guild_emails(guild)
+        logger.info("sending to {}".format(to_emails))
+        if not to_emails:
+            continue
 
         send_this = {guild: guild_content}
 
         html_content = sewing.display.html_content(send_this)
-        print(html_content)
+
+        logger.info('{}'.format(html_content))
+
         subject = '[{}] Daily Thread Summary'.format(guild.name)
 
         #resp = FakeResp()

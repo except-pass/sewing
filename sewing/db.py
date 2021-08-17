@@ -2,7 +2,7 @@
 
 __all__ = ['ensure_unique_nodes', 'guild_node', 'user_node', 'channel_node', 'ensure_guild', 'guilds', 'register_user',
            'unregister_user', 'set_email', 'get_email', 'get_guild_emails', 'seeall', 'add_channel', 'remove_channel',
-           'summarized_channels', 'add_suggestion']
+           'summarized_channels', 'add_suggestion', 'add_report', 'last_report']
 
 # Cell
 import time
@@ -163,3 +163,20 @@ def add_suggestion(user, *args, ts=None):
     q.add("WITH user, suggestion")
     q.add("MERGE (user)-[:MADE]->(suggestion)")
     return q.create()
+
+# Cell
+def add_report(guild, ts):
+    gnode = guild_node(guild)
+    q = Query()
+    q.add("MATCH")
+    q.add(gnode)
+    q.add("SET guild.last_report={}".format(ts))
+    return q.create()
+
+def last_report(guild):
+    gnode = guild_node(guild)
+    q = Query()
+    q.add("MATCH")
+    q.add(gnode)
+    q.add("RETURN guild.last_report as last_report")
+    return q.single()
