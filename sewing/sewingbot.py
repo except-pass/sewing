@@ -51,14 +51,15 @@ async def get_all_channel_content(channels):
 
 async def get_guild_content(guild):
     guild_content = {}
-    #for guild in all_guilds:
     channels = db.summarized_channels(guild, names_only=False)
     channels_content = await get_all_channel_content(channels)
     guild_content[guild] = channels_content
     return guild_content
 
 async def sew_threads(guild):
+    logger.info("sewing threads")
     guild_content = await get_guild_content(guild)
+    logger.info("{}".format(guild_content)
     resps = send_content(guild_content)
     logger.info('{}'.format([resp.status_code for resp in resps]))
 
