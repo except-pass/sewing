@@ -2,7 +2,7 @@
 
 __all__ = ['ensure_unique_nodes', 'guild_node', 'user_node', 'channel_node', 'ensure_guild', 'guilds', 'register_user',
            'unregister_user', 'set_email', 'get_email', 'get_guild_emails', 'seeall', 'add_channel', 'remove_channel',
-           'summarized_channels', 'add_suggestion', 'add_report', 'last_report']
+           'summarized_channels', 'add_suggestion', 'add_report', 'last_report', 'set_last_report', 'logger']
 
 # Cell
 import time
@@ -180,3 +180,32 @@ def last_report(guild):
     q.add(gnode)
     q.add("RETURN guild.last_report as last_report")
     return q.single()
+
+
+# Cell
+import logging
+logger = logging.getLogger()
+from sewing import is_main, start_log
+import pandas as pd
+
+def set_last_report(guild_name, ts):
+    """
+    Sets the last report time to be ts
+
+    :param guild_name: the name of the guild
+    :param ts: The time to set as a pandas to_datetime legible string.
+    """
+    lr_time = pd.to_datetime(ts)
+    q = Query()
+    q.add("MATCH")
+    q.add('(guild:Guild) where guild.name="{}"'.format(guild_name))
+    q.add("SET guild.last_report={}".format(lr_time.value/10**9))
+    q.add("RETURN guild.last_report as last_report")
+    return q.only()
+
+if is_main(globals()):
+    logger = start_log()
+    logger.setLevel(logging.INFO)
+    from clize import run
+    run(set_last_report)
+
