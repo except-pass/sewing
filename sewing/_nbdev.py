@@ -47,13 +47,15 @@ index = {"logger": "sewingbot.ipynb",
          "sew_threads": "sewingbot.ipynb",
          "check_if_time_to_send": "sewingbot.ipynb",
          "on_ready": "sewingbot.ipynb",
+         "sendnow": "sewingbot.ipynb",
          "register": "sewingbot.ipynb",
          "unregister": "sewingbot.ipynb",
          "email": "sewingbot.ipynb",
          "summarize": "sewingbot.ipynb",
          "suggest": "sewingbot.ipynb",
          "help_text": "sewingbot.ipynb",
-         "helpme": "sewingbot.ipynb"}
+         "helpme": "sewingbot.ipynb",
+         "on_message": "sewingbot.ipynb"}
 
 modules = ["config.py",
            "db.py",

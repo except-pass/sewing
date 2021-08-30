@@ -26,6 +26,25 @@ nb_path: "nbs/sewingbot.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[INFO] db(&lt;module&gt;)2021-08-18 19:15:36,946--&gt; 27.	 Connecting to bolt://localhost:7687
+[INFO] config(&lt;module&gt;)2021-08-18 19:15:37,300--&gt; 12.	 Config file: config.yaml
+[INFO] config(&lt;module&gt;)2021-08-18 19:15:37,301--&gt; 23.	 {&#39;frequency&#39;: {&#39;hours&#39;: 24}, &#39;lookback&#39;: {&#39;days&#39;: 1}}
+[WARNING] client(__init__)2021-08-18 19:15:37,302--&gt; 239.	 PyNaCl is not installed, voice will NOT be supported
+[DEBUG] client(event)2021-08-18 19:15:37,303--&gt; 1022.	 on_ready has successfully been registered as an event
+[DEBUG] client(event)2021-08-18 19:15:37,305--&gt; 1022.	 on_message has successfully been registered as an event
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -54,7 +73,7 @@ nb_path: "nbs/sewingbot.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="guilds" class="doc_header"><code>guilds</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>guilds</code>()</p>
+<h4 id="guilds" class="doc_header"><code>guilds</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>guilds</code>()</p>
 </blockquote>
 
 </div>
@@ -78,7 +97,7 @@ nb_path: "nbs/sewingbot.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_channel_content" class="doc_header"><code>get_all_channel_content</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_channel_content</code>(<strong><code>channels</code></strong>)</p>
+<h4 id="get_all_channel_content" class="doc_header"><code>get_all_channel_content</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_channel_content</code>(<strong><code>channels</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -102,7 +121,7 @@ nb_path: "nbs/sewingbot.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_guild_content" class="doc_header"><code>get_all_guild_content</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_guild_content</code>(<strong><code>all_guilds</code></strong>)</p>
+<h4 id="get_guild_content" class="doc_header"><code>get_guild_content</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_guild_content</code>(<strong><code>guild</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -126,7 +145,31 @@ nb_path: "nbs/sewingbot.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="Loop object at 0x7fe1a6a12ca0>" class="doc_header"><code>Loop object at 0x7fe1a6a12ca0></code><a href="" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Loop object at 0x7fe1a6a12ca0></code>()</p>
+<h4 id="sew_threads" class="doc_header"><code>sew_threads</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L65" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sew_threads</code>(<strong><code>guild</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Loop object at 0x7f43ed985550>" class="doc_header"><code>Loop object at 0x7f43ed985550></code><a href="" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Loop object at 0x7f43ed985550></code>()</p>
 </blockquote>
 <p>A background task helper that abstracts the loop and reconnection logic for you.</p>
 <p>The main interface to create this is through :func:<code>loop</code>.</p>
@@ -152,7 +195,7 @@ nb_path: "nbs/sewingbot.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="on_ready" class="doc_header"><code>on_ready</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>on_ready</code>()</p>
+<h4 id="on_ready" class="doc_header"><code>on_ready</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>on_ready</code>()</p>
 </blockquote>
 
 </div>
@@ -697,6 +740,29 @@ extras: :class:<code>dict</code>
 <div class="output_area">
 
 
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#34;\nYou can `||register` for email updates of important threads.  \nWhen you do, I&#39;ll DM you so you can set your email address `||email my@address.com`.\n`||unregister` to stop getting email updates.\nYou can also `||suggest your good ideas` to the devs of this bot.\nFinally you can `||summarize start` or `||summarize stop` to add/remove channels from the summary.  \nBe careful though, this is not done user-by-user yet so you&#39;ll include that channel for everyone.\n    &#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="how" class="doc_header"><code>how</code><a href="" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>how</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
@@ -784,6 +850,97 @@ extras: :class:<code>dict</code>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">CommandRegistrationError</span>                  Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_20044/3945966771.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#export</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-blue-fg">@</span>bot<span class="ansi-blue-fg">.</span>command<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;how&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">async</span> <span class="ansi-green-fg">def</span> helpme<span class="ansi-blue-fg">(</span>ctx<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">await</span> ctx<span class="ansi-blue-fg">.</span>send<span class="ansi-blue-fg">(</span>help_text<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/repos/discord.py/discord/ext/commands/core.py</span> in <span class="ansi-cyan-fg">decorator</span><span class="ansi-blue-fg">(func)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1229</span>             kwargs<span class="ansi-blue-fg">.</span>setdefault<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;parent&#39;</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1230</span>             result <span class="ansi-blue-fg">=</span> command<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">(</span>func<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 1231</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>add_command<span class="ansi-blue-fg">(</span>result<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1232</span>             <span class="ansi-green-fg">return</span> result
+<span class="ansi-green-intense-fg ansi-bold">   1233</span> 
+
+<span class="ansi-green-fg">~/repos/discord.py/discord/ext/commands/core.py</span> in <span class="ansi-cyan-fg">add_command</span><span class="ansi-blue-fg">(self, command)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1115</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1116</span>         <span class="ansi-green-fg">if</span> command<span class="ansi-blue-fg">.</span>name <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>all_commands<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1117</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> CommandRegistrationError<span class="ansi-blue-fg">(</span>command<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1118</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1119</span>         self<span class="ansi-blue-fg">.</span>all_commands<span class="ansi-blue-fg">[</span>command<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> command
+
+<span class="ansi-red-fg">CommandRegistrationError</span>: The command how is already an existing command or alias.</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="on_message" class="doc_header"><code>on_message</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/sewingbot.py#L199" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>on_message</code>(<strong><code>message</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_20903/2921414964.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#export</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">@</span>bot<span class="ansi-blue-fg">.</span>event
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">async</span> <span class="ansi-green-fg">def</span> on_message<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     logger<span class="ansi-blue-fg">.</span>debug<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;{a}, {k}&#39;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">=</span>args<span class="ansi-blue-fg">,</span> k<span class="ansi-blue-fg">=</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">await</span> bot<span class="ansi-blue-fg">.</span>process_commands<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;bot&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}

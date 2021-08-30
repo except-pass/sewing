@@ -124,19 +124,12 @@ nb_path: "nbs/db.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_29628/1176448886.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> TESTCASE <span class="ansi-blue-fg">=</span> unittest<span class="ansi-blue-fg">.</span>TestCase<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>TESTCASE<span class="ansi-blue-fg">.</span>assertTrue<span class="ansi-blue-fg">(</span>start_fresh<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> create_totem<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> ensure_unique_nodes<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> ensure_unique_nodes<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;start_fresh&#39; is not defined</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{}</pre>
 </div>
+
 </div>
 
 </div>
@@ -576,7 +569,7 @@ nb_path: "nbs/db.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[{&#39;n&#39;: {&#39;eid&#39;: &#39;totem&#39;, &#39;is_test_data&#39;: True}}, {&#39;n&#39;: {&#39;name&#39;: &#39;fake&#39;, &#39;id&#39;: &#39;abc123&#39;}}]
-[{&#39;n&#39;: {&#39;eid&#39;: &#39;totem&#39;, &#39;is_test_data&#39;: True}}, {&#39;n&#39;: {&#39;name&#39;: &#39;fake&#39;, &#39;id&#39;: &#39;abc123&#39;}}, {&#39;n&#39;: {&#39;name&#39;: &#39;user#789&#39;, &#39;id&#39;: &#39;user789&#39;, &#39;discriminator&#39;: &#39;789&#39;}}]
+[{&#39;n&#39;: {&#39;name&#39;: &#39;user#789&#39;, &#39;id&#39;: &#39;user789&#39;, &#39;discriminator&#39;: &#39;789&#39;}}, {&#39;n&#39;: {&#39;eid&#39;: &#39;totem&#39;, &#39;is_test_data&#39;: True}}, {&#39;n&#39;: {&#39;name&#39;: &#39;fake&#39;, &#39;id&#39;: &#39;abc123&#39;}}]
 SUCCESS
 </pre>
 </div>
@@ -814,6 +807,136 @@ SUCCESS
     </div>
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="add_report" class="doc_header"><code>add_report</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/db.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_report</code>(<strong><code>guild</code></strong>, <strong><code>ts</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="last_report" class="doc_header"><code>last_report</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/db.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>last_report</code>(<strong><code>guild</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_last_report</span><span class="p">():</span>
+    <span class="n">TESTCASE</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">start_fresh</span><span class="p">())</span>
+    <span class="n">create_totem</span><span class="p">()</span>
+    <span class="n">fg</span> <span class="o">=</span> <span class="n">FakeGuild</span><span class="p">()</span>
+    <span class="n">ensure_guild</span><span class="p">(</span><span class="n">fg</span><span class="p">)</span>
+
+    <span class="n">TESTCASE</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">last_report</span><span class="p">(</span><span class="n">fg</span><span class="p">))</span>
+    <span class="n">add_report</span><span class="p">(</span><span class="n">fg</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">TESTCASE</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">last_report</span><span class="p">(</span><span class="n">fg</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">)</span>
+<span class="n">test_last_report</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SUCCESS
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="set_last_report" class="doc_header"><code>set_last_report</code><a href="https://github.com/except-pass/sewing/tree/master/sewing/db.py#L191" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_last_report</code>(<strong><code>guild_name</code></strong>, <strong><code>ts</code></strong>)</p>
+</blockquote>
+<p>Sets the last report time to be ts</p>
+<p>:param guild_name: the name of the guild
+:param ts: The time to set as a pandas to_datetime legible string.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}

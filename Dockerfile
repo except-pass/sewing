@@ -8,4 +8,5 @@ RUN pip install --upgrade pip
 WORKDIR /sewing
 
 COPY . .
+RUN pip install discord.py/.
 RUN pip install . 

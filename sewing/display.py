@@ -76,7 +76,8 @@ def serialize_content(guild_content):
         for channel_obj, thread_d in channels_d.items():
             fmt.add(channel_obj)
             for thread, msg_list in thread_d.items():
-                fmt.add(thread)
+                if msg_list:
+                    fmt.add(thread)
                 for msg in msg_list:
                     fmt.add(msg)
     return fmt.lines

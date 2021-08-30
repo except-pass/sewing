@@ -36,7 +36,11 @@ class Retriever:
         if chan is None:
             return {}
 
-        all_threads = [] if chan.threads is None else chan.threads
+        all_threads = []
+        try:
+            all_threads = chan.threads
+        except AttributeError:
+            logger.info("Channel {} has no threads".format(chan))
         for thread in all_threads:
             logger.info("THREAD {}".format(thread))
             messages[thread] = await self.get_all_messages_in_thread(thread)
@@ -76,7 +80,7 @@ def send_content(content:dict):
 
         to_emails = get_guild_emails(guild)
         logger.info("sending to {}".format(to_emails))
-        if not to_emails:
+        if not to_emails or to_emails[0] is None:
             continue
 
         send_this = {guild: guild_content}
