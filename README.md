@@ -4,15 +4,15 @@
 
 ## Quick Start
 
-Go to a discord channel that is running this bot and type `!how` for instructions
+Go to a discord channel that is running this bot and type `||how` for instructions
 
 
 ## Add this bot to your server
 
 Use this link:
-https://discord.com/api/oauth2/authorize?client_id=873958608956710912&permissions=67584&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=873958608956710912&permissions=34359805952&scope=bot
 
-The bot needs `Send Messages` and `Read Message History` permissions.  
+The bot needs `Send Messages`, `Public Threads`, and `Read Message History` permissions.  
 
 ## Still to do
 
