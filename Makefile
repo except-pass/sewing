@@ -19,6 +19,7 @@ clean:
 	rm -rf dist
 
 env:
+	gh repo clone dpy2/discord.py  #needs threads which the pip version of discord.py does not yet support
 	virtualenv .venv -p python3.8 --prompt "[$(REPO)] "
 	. .venv/bin/activate && pip install jupyter jupyterlab nbdev
 	. .venv/bin/activate && pip install discord.py/.

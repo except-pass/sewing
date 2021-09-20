@@ -23,7 +23,7 @@ def set_default_mail_api(mail_api=None):
     DEFAULT_MAIL_API=mail_api
     return mail_api
 
-FROM_DEFAULT = 'gathright@gmail.com'
+FROM_DEFAULT = 'will@endao.network'
 
 def send(to_emails, subject, html_content, from_email=FROM_DEFAULT, mail_api=DEFAULT_MAIL_API):
     logger.debug('Email request received {}'.format(
