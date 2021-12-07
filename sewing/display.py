@@ -13,7 +13,8 @@ import json
 
 def encode(u):
     if isinstance(u, discord.Message):
-        serialized = "({ts}){author}: {content}".format(ts=u.created_at.isoformat(),
+        ts = u.created_at
+        serialized = "({ts}){author}: {content}".format(ts=ts.strftime("%b %d %Y %H:%M:%S"),
                                                         author=u.author.name,
                                                         content=u.content)
         return serialized

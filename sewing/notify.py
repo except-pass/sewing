@@ -92,8 +92,9 @@ def send_content(content:dict):
         subject = '[{}] Daily Thread Summary'.format(guild.name)
 
         #resp = FakeResp()
-        resp = send(to_emails, subject, html_content)
-        resps.append(resp)
+        for to_email in to_emails:
+            resp = send([to_email], subject, html_content)
+            resps.append(resp)
 
     logger.info("{}".format(resps))
     return resps
